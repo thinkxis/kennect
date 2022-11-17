@@ -1,3 +1,7 @@
+There are 2 NodeJs projects
+
+# kennect
 This is Angular Project
-# kennect
-# kennect
+
+# backend
+This is Express Project

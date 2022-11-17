@@ -1,0 +1,54 @@
+<div class="main">
+    <form (submit)="getPrimesInRange(numLo, numHi)">
+        <div class="placed">
+            <h2>Start@ {{numLo}}</h2>
+            <input type="range" min="0" [max]="numHi - 1" [(ngModel)]="numLo" (change)="numHi = (numLo+1)" name="numLo" />
+        </div>
+        <div class="placed">
+            <h2>End@ {{numHi}}</h2>
+            <input type="range" [min]="numLo + 1" max="1000" [(ngModel)]="numHi" name="numLo" />        
+        </div>
+        <button type="submit">Run Function</button>
+
+        <!-- <p>Finished in {{performX}}</p> -->
+    </form>
+</div>
+
+
+
+<table>
+    <tr>
+        <td colspan="2">Time taken to run all = {{performX}}</td>
+    </tr>
+    <tr>
+        <th>Number</th>
+        <th>Status</th>
+        <th>Time (ms)</th>
+    </tr>
+    <tr *ngFor="let x of setAllList">
+        <td>{{x.iNumr}}</td>
+        <td>{{x.iPrime ? 'Prime':'Normal'}}</td>
+        <td>{{x.iTime}}</td>
+    </tr>
+    <tr *ngIf="setAllList.length == 0">
+        <td colspan="2">No Data to Show</td>
+    </tr>
+</table>
+
+
+<table>
+    <tr>
+        <td colspan="2">List of Prime Numbers</td>
+    </tr>
+    <tr>
+        <th>Prime Number</th>
+        <th>Time (ms)</th>
+    </tr>
+    <tr *ngFor="let x of setPrimeList">
+        <td>{{x.iNumr}}</td>
+        <td>{{x.iTime}}</td>
+    </tr>
+    <tr *ngIf="setPrimeList.length == 0">
+        <td colspan="2">No Data to Show</td>
+    </tr>
+</table>

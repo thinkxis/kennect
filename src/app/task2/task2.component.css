@@ -1,0 +1,11 @@
+
+.main button{    
+    border: 0px solid;
+    line-height: 30px;
+    padding: 0 16px;
+    border-radius: 3px;
+}
+.main button:hover{
+    background: #0275ff;
+    color: #ffffff;
+}
